@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class NormalAnimal extends Animal{
+public class NormalAnimal extends Animal implements DatabaseManagement{
 public static final String DATABASE_TYPE="normal";
 
 public NormalAnimal(String name){
@@ -30,10 +30,16 @@ public void save(){
     .executeUpdate()
     .getKey();
 }
-
 }
-
-
+public static NormalAnimal find(int id) {
+      try(Connection con = DB.sql2o.open()) {
+        String sql = "SELECT * FROM animals where id=:id";
+        NormalAnimal normalAnimal = con.createQuery(sql)
+          .addParameter("id", id)
+          .executeAndFetchFirst(NormalAnimal.class);
+        return normalAnimal;
+      }
+    }
 
 public static List<NormalAnimal> all(){
   String sql="SELECT * FROM animals WHERE type='normal';";

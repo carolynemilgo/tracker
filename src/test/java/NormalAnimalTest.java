@@ -22,4 +22,30 @@ public DatabaseRule database = new DatabaseRule();
     assertTrue(NormalAnimal.all().get(0).equals(normalAnimal));
   }
 
+  @Test
+  public void returnsAllInstancesOfNormalAnimals_true(){
+    NormalAnimal normalAnimalOne=new NormalAnimal("Zebra");
+    normalAnimalOne.save();
+    NormalAnimal normalAnimalTwo=new NormalAnimal("Ostrich");
+    normalAnimalTwo.save();
+    assertEquals(true, NormalAnimal.all().get(0).equals(normalAnimalOne));
+    assertEquals(true, NormalAnimal.all().get(1).equals(normalAnimalTwo));
+  }
+
+  @Test
+  public void find_returnsNormalAnimalWIthSameId_secondNormalAnimal(){
+    NormalAnimal normalAnimalOne=new NormalAnimal("Ostrich");
+    normalAnimalOne.save();
+    NormalAnimal normalAnimalTwo=new NormalAnimal("Peacock");
+    normalAnimalTwo.save();
+    assertEquals(NormalAnimal.find(normalAnimalTwo.getId()), normalAnimalTwo);
+  }
+  @Test
+  public void delete_deletesNormalAnimal_true() {
+    NormalAnimal testNormalAnimal = new NormalAnimal("Zebra");
+    testNormalAnimal.save();
+    testNormalAnimal.delete();
+    assertEquals(null, NormalAnimal.find(testNormalAnimal.getId()));
+  }
+
 }
