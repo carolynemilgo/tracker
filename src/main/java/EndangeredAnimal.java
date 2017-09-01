@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 
 
-public class EndangeredAnimal extends Animal{
+public class EndangeredAnimal extends Animal implements DatabaseManagement{
 public static final String DATABASE_TYPE="endangered";
 
 public EndangeredAnimal(String name, String health, String age){
