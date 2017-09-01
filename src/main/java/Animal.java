@@ -7,11 +7,12 @@ public abstract class Animal{
 public String name;
 public int id;
 public String type;
-
+public String age;
+public String health;
 //declaring constants
-public static final String age;
+//public static final String age;
 //{"newborn", "young", "adult"};
-public static final String health;
+//public static final String health;
 //{"healthy", "ill", "ok"};
 
 

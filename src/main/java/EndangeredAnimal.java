@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 
 public class EndangeredAnimal extends Animal{
-
+public static final String DATABASE_TYPE="endangered";
 
 public EndangeredAnimal(String name, String health, String age){
   this.name=name;

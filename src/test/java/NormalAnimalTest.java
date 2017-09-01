@@ -14,6 +14,7 @@ public DatabaseRule database = new DatabaseRule();
     NormalAnimal normalAnimal=new NormalAnimal("Lion");
     assertEquals(true, normalAnimal instanceof NormalAnimal);
   }
+
   @Test
   public void saves_normalAnimalSavesToTheDB_true(){
     NormalAnimal normalAnimal=new NormalAnimal("Lion");
