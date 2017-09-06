@@ -1,0 +1,57 @@
+
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-6">
+<h3>Normal Animals</h3>
+#foreach($animal in $normalanimals)
+<li><a href="/normalanimals/normalanimal.getAnimalId()">$animal.getName()</a></li>
+#end
+</div>
+<div class="col-md-6">
+<h3>Endangered Animals</h3>
+#foreach($animal in $endangeredanimals)
+<li><a href="/endangeredanimals/endangeredanimal.getAnimalId()">$animal.getName()</a></li>
+#end
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+  <h3>Register an animal</h3>
+  <h4>If the animal is not endangered, kindly fill in the name only and hit the submit button</h4>
+  <div>
+  <form action="/" method="post">
+    <div>
+    <label for="animalname"> Name of animal</label>
+    <input type=text id="animalname" name="animalname" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success" >Add Animal</button>
+</form>
+</div>
+<div>
+  <form action="/" method="post">
+    <div>
+    <label for="animalname"> Name of animal</label>
+    <input type=text id="animalname" name="animalname" class="form-control">
+  </div>
+  <div>
+    <label for="age"> Age of animal</label>
+    <select  name='age' type='text'>
+                  <option value="newborn">0 monts to 1 years</option>
+                  <option value="young">1 monts to 5 years</option>
+                  <option value="adult">6 monts to 20 years</option>
+              </select>
+            </div>
+            <div>
+    <label for="animalhealth"> Health of animal</label>
+    <select  name='animalhealth' type='text'>
+                  <option value="healthy">Healthy</option>
+                  <option value="ill">Ill</option>
+                  <option value="okay">Okay</option>
+              </select>
+            </div>
+              <button type="submit" class="btn btn-success" >Add Endangered Animal</button>
+  </form>
+</div>
+</div>

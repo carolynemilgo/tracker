@@ -19,7 +19,7 @@ public Sightings(int animalId,String rangerName,String location){
 }
 
 public int getAnimalId(){
-  return animalId;
+  return id;
 }
 public String getLocation(){
   return location;
@@ -72,5 +72,6 @@ public boolean equals(Object otherSighting){
        .executeAndFetch(Sightings.class);
      }
  }
+
 
 }

@@ -20,25 +20,23 @@ public class SightingsTest {
       newSighting.save();
       assertTrue(Sightings.all().get(0).equals(newSighting));
     }
-
-
-    //   @Test
-    //   public void all_returnsAllSightings_true() {
-    //       Sighting testSighting1 = new Sighting( 1 , "north","john");
-    //       testSighting1.save();
-    //       Sighting testSighting2 = new Sighting( 2 , "south","Steve");
-    //       testSighting2.save();
-    //       assertTrue(Sighting.all().get(0).equals(testSighting1));
-    //       assertTrue(Sighting.all().get(1).equals(testSighting2));
-    //     }
-    //     @Test
-    //     public void find_returnsSightingWithSameId_true() {
-    //         Sighting testSighting1 = new Sighting( 1 , "north","john");
-    //         testSighting1.save();
-    //         Sighting testSighting2 = new Sighting( 2 , "south","Steve");
-    //         testSighting2.save();
-    //         assertEquals(Sighting.find(testSighting2.getId()),testSighting2);
-    //       }
+    @Test
+    public void returnsAllAnimalsSighted_true(){
+      Sightings firstSighting=new Sightings(1, "south", "ken");
+      firstSighting.save();
+      Sightings secondSighting=new Sightings(2, "east", "jill");
+      secondSighting.save();
+      assertTrue(Sightings.all().get(0).equals(firstSighting));
+      assertTrue(Sightings.all().get(1).equals(secondSighting));
+    }
+    @Test
+    public void returnsSIghtingsCorrespondingToId_true(){
+      Sightings firstSighting=new Sightings(1, "south", "ken");
+      firstSighting.save();
+      Sightings secondSighting=new Sightings(2, "east", "jill");
+      secondSighting.save();
+      assertEquals(Sightings.find(firstSighting.getAnimalId()),firstSighting);
+    }
 
 
 }
