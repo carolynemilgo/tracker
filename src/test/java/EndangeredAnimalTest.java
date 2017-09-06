@@ -5,15 +5,38 @@ import org.sql2o.*;
 
 
 public class EndangeredAnimalTest{
-  @Rule
-  public DatabaseRule database = new DatabaseRule();
+@Rule
+public DatabaseRule database = new DatabaseRule();
+
+@Test
+public void endangeredAnimal_instatiatesNameCorrectly_true(){
+EndangeredAnimal endangeredAnimal=new EndangeredAnimal("Rhino", "healthy", "young");
+assertEquals(true, endangeredAnimal instanceof EndangeredAnimal);
+}
+
+@Test
+public void endangeredAnimal_instatiatesCorrectly_true(){
+  EndangeredAnimal endangeredAnimal=new EndangeredAnimal("Rhino", "healthy", "young");
+  assertEquals("Rhino", endangeredAnimal.getName());
+  }
 
   @Test
-  public void endageredAnimal_instatiatesCorrectly_true(){
+  public void endangeredAnimal_instatiatesAgeCorrectly_true(){
     EndangeredAnimal endangeredAnimal=new EndangeredAnimal("Rhino", "healthy", "young");
-    assertEquals(true, endangeredAnimal instanceof EndangeredAnimal);
+    assertEquals("young", endangeredAnimal.getAge());
+    }
+@Test
+  public void endangeredAnimal_instatiatesHealthCorrectly_true(){
+    EndangeredAnimal endangeredAnimal=new EndangeredAnimal("Rhino", "healthy", "young");
+    assertEquals("healthy", endangeredAnimal.getHealth());
     }
 
+@Test
+public void returnsTrueIfSavedEndageredAnimalIsTheSame_true(){
+  EndangeredAnimal endangeredAnimal=new EndangeredAnimal("Rhino", "healthy", "young");
+  endangeredAnimal.save();
+  assertTrue(EndangeredAnimal.all().get(0).equals(endangeredAnimal));
+}
 @Test
 public void returnsAllInstancesOfEndangeredANimals_true(){
   EndangeredAnimal testEndangered=new EndangeredAnimal("White Rhino", "healthy", "old");
