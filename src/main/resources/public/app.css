@@ -2,12 +2,12 @@ html {
 	width: 100%;
 }
 body {
-
+font-family: 'Slabo 27px', serif;
 	position:relative;
 }
 h1, h2 {
 	font-weight: normal;
-	font-family: 'Paprika', cursive;;
+
 	color: #fff;
 }
 
