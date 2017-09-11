@@ -1,10 +1,15 @@
+<div class="header1">
+</div>
+<div class="sightings">
 <form action="/sightings" method="post">
-  <div >
-    <label for="rangerName">Ranger Name</label>
-    <input type="text" name="rangerName" class="form-control">
+  <div class="names" >
+    <label for="rangerName" style="color:fff">Ranger Name</label>
+    <p>
+    <input type="text" name="rangerName" class="form-control" placeholder="Rangers name" size="15">
   </div>
   <div >
     <label for="location">Where was the Animal Seen</label>
+    <p>
     <select  name='location' type='text'>
           <option value="Zone A">Zone A</option>
           <option value="Zone B">Zone B</option>
@@ -13,8 +18,9 @@
 
       </select>
   </div>
-  <div >
-    <label for="animalid"> Animal Seen</label>
+  <div>
+    <label for="animalid"> Select animal spotted</label>
+    <p>
     <select  name='animalId' type='text'>
       #foreach($animal in $endangeredanimals)
         <option value="$animal.getId()">$animal.getName()</option>
@@ -22,10 +28,10 @@
       #foreach($animal in $normalanimals)
         <option value="$animal.getId()">$animal.getName()</option>
       #end
-
       </select>
+      <p>
   </div>
-  <button type="submit"> Submit Sighting </button>
+  <button type="submit" class="btn btn-success"> Submit Sighting </button>
 </form>
 
 <div>
@@ -34,3 +40,4 @@
     <p>$sighting.getLocation()</p>
 #end
 </div>
+<div>

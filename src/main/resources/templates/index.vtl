@@ -68,25 +68,28 @@
   </form>
 </div>
 </div>
-</hr>
-<div class="row">
-
+<p>
+  <p>
+<hr>
 <h3>Endangered Animals</h3>
-<div class="col-md-3">
+<div class="row">
 #foreach($animal in $endangeredanimals)
+<div class="col-md-3">
 <p><strong>$animal.getName()</strong></p>
   <p><strong>Age:</strong> $animal.getAge()</p>
   <p><strong>Health: </strong>$animal.getHealth()</p>
-
+</div>
 #end
-</div>
-</div>
 
-<div class="row">
+</div>
+<hr>
   <h3>Normal Animals</h3>
+<div class="row">
+
+
   #foreach($animal in $normalanimals)
   <div class="col-md-3">
-    <p><a href="/normalanimals/normalanimal.getAnimalId()">$animal.getName()</a></p>
-  #end
+    <p><strong>$animal.getName()</strong></p>
   </div>
+    #end
 </div>
